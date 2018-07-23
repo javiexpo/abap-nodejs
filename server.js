@@ -1,9 +1,13 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const app = express();
 
 // app.use(bodyParser);
+console.log(process.env.PORT);
 
 app.get('/publish', function (req, res) {
     console.log('GET on /publish');
